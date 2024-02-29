@@ -1,9 +1,9 @@
 <div align="center">
 <h1>
-<b>Rent_A_Car</b>
+<b>P8Rent</b>
 </h1>
   <img width="300" src="https://raw.githubusercontent.com/aslibeyhan/P8Rent/main/public/assets/logo.png" alt="Rent_A_Car logo">
-  <p>Rent_A_Car is a car rental application developed using Java, SpringBoot,Typescript and React technologies.</p>
+  <p>P8Rent is a car rental application developed using Java, SpringBoot,Typescript and React technologies.</p>
 </div>
 
 ## Our Team
