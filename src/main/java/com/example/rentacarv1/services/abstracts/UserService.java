@@ -23,9 +23,12 @@ public interface UserService extends UserDetailsService {
     boolean getUserById(Integer id);
 
     boolean isEmailExists(String email);
+
     boolean isGsmExists(String phoneNumber);
 
     Result updateEmail(int id, UpdateEmailRequest updateEmailRequest);
+    Result updateName(int id, UpdateNameRequest updateNameRequest);
+    Result updateSurname(int id, UpdateSurnameRequest updateSurnameRequest);
 
 
     Result updateGsm(int id, UpdateGsmRequest updateGsmRequest);

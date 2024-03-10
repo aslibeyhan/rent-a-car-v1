@@ -116,6 +116,7 @@ public class UserManager implements UserService {
     public boolean isGsmExists(String phoneNumber) {
         return userRepository.findByGsm(phoneNumber).isPresent();
     }
+
     @Override
     public Result updateEmail(int id, UpdateEmailRequest request) {
         String newEmail = request.getEmail();
@@ -149,6 +150,23 @@ public class UserManager implements UserService {
         }
         User user = userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
         user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+        return new SuccessResult( HttpStatus.OK,messageService.getMessage(BaseMessages.UPDATE));
+    }
+    @Override
+    public Result updateName(int id, UpdateNameRequest request) {
+        String newName = request.getName();
+
+        User user = userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        user.setName(newName);
+        userRepository.save(user);
+        return new SuccessResult( HttpStatus.OK,messageService.getMessage(BaseMessages.UPDATE));
+    }
+    @Override
+    public Result updateSurname(int id, UpdateSurnameRequest request) {
+        String newSurname = request.getSurname();
+        User user = userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        user.setSurname(newSurname);
         userRepository.save(user);
         return new SuccessResult( HttpStatus.OK,messageService.getMessage(BaseMessages.UPDATE));
     }

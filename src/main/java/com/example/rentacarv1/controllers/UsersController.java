@@ -64,6 +64,13 @@ public class UsersController {
     public void updatePassword(@PathVariable int id, @RequestBody @Valid UpdatePasswordRequest updatePasswordRequest) {
         userService.updatePassword(id, updatePasswordRequest);
     }
-
+    @PutMapping("/{id}/updateName")
+    public void updateName(@PathVariable int id, @RequestBody @Valid UpdateNameRequest updateNameRequest) {
+        userService.updateName(id, updateNameRequest);
+    }
+    @PutMapping("/{id}/updateSurname")
+    public void updateSurname(@PathVariable int id, @RequestBody @Valid UpdateSurnameRequest updateSurnameRequest) {
+        userService.updateSurname(id, updateSurnameRequest);
+    }
 
 }
